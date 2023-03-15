@@ -12,8 +12,8 @@ const config: Config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "!./**/index.{js,ts}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "!./**/index.{js,jsx,ts,tsx}",
     "!./**/helpers/**",
     "!./**/interfaces/**",
     "!./**/types/**",
@@ -40,7 +40,7 @@ const config: Config = {
   },
 
   // A path to a module which exports an async function that is triggered once before all test suites
-  globalSetup: "./test/config/env.setup.ts",
+  // globalSetup: "./test/config/env.setup.ts",
 
   // A preset that is used as a base for Jest's configuration
   preset: "ts-jest",
@@ -52,7 +52,7 @@ const config: Config = {
   // restoreMocks: false,
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ["./test/config/fetchMock.setup.ts"],
+  // setupFiles: ["./test/config/fetchMock.setup.ts"],
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
