@@ -27,7 +27,7 @@ module.exports = {
         devDependencies: [
           "**/webpack.*.{js,ts}",
           "**/*.test.{js,ts,jsx,tsx}",
-          "**/config/*.{ts,js}",
+          "**/*.setup.{js,ts,jsx,tsx}",
         ],
       },
     ],

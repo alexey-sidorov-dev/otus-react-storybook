@@ -11,14 +11,14 @@ const config: Config = {
   // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "!./**/index.{js,jsx,ts,tsx}",
-    "!./**/helpers/**",
-    "!./**/interfaces/**",
-    "!./**/types/**",
-    "!./**/*.d.ts",
-  ],
+  // collectCoverageFrom: [
+  //   "./src/**/*.{js,jsx,ts,tsx}",
+  //   "!./**/index.{js,jsx,ts,tsx}",
+  //   "!./**/helpers/**",
+  //   "!./**/interfaces/**",
+  //   "!./**/types/**",
+  //   "!./**/*.d.ts",
+  // ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
@@ -53,6 +53,9 @@ const config: Config = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: ["./test/config/fetchMock.setup.ts"],
+
+  // A list of paths to modules that run some code to configure or set up the testing framework before each test
+  setupFilesAfterEnv: ["./test/jest.setup.ts"],
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
