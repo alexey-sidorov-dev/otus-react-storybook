@@ -3,6 +3,8 @@
 .eslintcache
 .stylelintcache
 .env
+!.storybook
+!.loki
 node_modules
 build
 dist

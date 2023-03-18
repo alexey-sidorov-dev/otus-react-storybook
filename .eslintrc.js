@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
     "prettier",
@@ -28,6 +29,7 @@ module.exports = {
           "**/webpack.*.{js,ts}",
           "**/*.test.{js,ts,jsx,tsx}",
           "**/*.setup.{js,ts,jsx,tsx}",
+          "**/*.stories.{js,ts,jsx,tsx}",
         ],
       },
     ],
