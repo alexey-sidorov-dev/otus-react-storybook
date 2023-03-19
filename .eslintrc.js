@@ -17,7 +17,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "jest"],
+  plugins: ["@typescript-eslint"],
   rules: {
     "import/no-unresolved": "off",
     "import/extensions": ["warn", "never"],
