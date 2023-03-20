@@ -4,9 +4,9 @@ export type PromptedComponent = {
 };
 
 export type HeaderProps = {
-  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  defaultLevel: "h1";
+  level: HeaderLevel;
 };
+export type HeaderLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export type BreakerProps = {
   number: number;
@@ -24,3 +24,5 @@ export type ImageProps = {
 };
 
 export type ColumnProps = { number: number; defaultNumber: 1 };
+
+export type Parameter = { value: string; display: string };

@@ -3,7 +3,7 @@ import Header from ".";
 
 describe("Header", () => {
   it("should find header", () => {
-    render(<Header />);
+    render(<Header level="h1" />);
 
     expect(screen.getByTestId("header")).toBeInTheDocument();
   });
