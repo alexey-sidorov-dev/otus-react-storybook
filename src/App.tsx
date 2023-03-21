@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
+import { HeaderProps, Parameter } from "./types";
 import Accordion from "./components/Accordion";
 import Breaker from "./components/Breaker";
 import Columns from "./components/Columns";
-import Header from "./components/Header";
+import { Header } from "./components/Header";
 import Paragraph from "./components/Paragraph";
 import Picture from "./components/Picture";
-import { HeaderLevel, HeaderProps, Parameter } from "./types";
 
 export const App: FC = () => {
   const [componentName, setComponentName] = useState("-");
@@ -24,9 +24,12 @@ export const App: FC = () => {
   const parametersList: Record<string, Array<Parameter>> = {
     "-": [{ value: "-", display: "-- Выберите параметр --" }],
     Header: [
-      { value: "h1", display: "Уровень 1" },
-      { value: "h2", display: "Уровень 2" },
-      { value: "h3", display: "Уровень 3" },
+      { value: "1", display: "Уровень 1" },
+      { value: "2", display: "Уровень 2" },
+      { value: "3", display: "Уровень 3" },
+      { value: "4", display: "Уровень 4" },
+      { value: "5", display: "Уровень 5" },
+      { value: "6", display: "Уровень 6" },
     ],
     Paragraph: [
       { value: "normal", display: "Обычный" },
@@ -34,8 +37,8 @@ export const App: FC = () => {
       { value: "blockquote", display: "Цитата" },
     ],
     Breaker: [
-      { value: "one", display: "Одна линия" },
-      { value: "double", display: "Две линии" },
+      { value: "1", display: "Одна линия" },
+      { value: "2", display: "Две линии" },
     ],
     Accordion: [
       { value: "collapsed", display: "Свёрнутый" },
@@ -93,7 +96,10 @@ export const App: FC = () => {
       </div>
       <div className="main">
         {componentName === "Header" && (
-          <Header level={componentParameter as HeaderLevel} />
+          <Header
+            level={componentParameter as HeaderProps["level"]}
+            text="Lorem ipsum dolor sit amet"
+          />
         )}
         {componentName === "Paragraph" && <Paragraph />}
         {componentName === "Breaker" && <Breaker />}

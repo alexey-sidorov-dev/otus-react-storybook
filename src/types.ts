@@ -4,25 +4,25 @@ export type PromptedComponent = {
 };
 
 export type HeaderProps = {
-  level: HeaderLevel;
+  level: "1" | "2" | "3" | "4" | "5" | "6";
+  text: string;
 };
-export type HeaderLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export type BreakerProps = {
-  number: number;
-  defaultNumber: 1;
+  number: "1" | "2";
+  text: string;
 };
 
 export type ParagraphProps = {
   style: "normal" | "italic" | "blockquote";
-  defaultStyle: "normal";
+  text: string;
 };
 
 export type ImageProps = {
   float: "left" | "right" | "both";
-  defaultFolat: "left";
+  text: string;
 };
 
-export type ColumnProps = { number: number; defaultNumber: 1 };
+export type ColumnProps = { number: number; text: string };
 
 export type Parameter = { value: string; display: string };
