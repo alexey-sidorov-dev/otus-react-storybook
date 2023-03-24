@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
-import { HeaderProps, Parameter } from "./types";
+import { BreakerProps, HeaderProps, Parameter } from "./types";
 import Accordion from "./components/Accordion";
-import Breaker from "./components/Breaker";
+import { Breaker } from "./components/Breaker";
 import Columns from "./components/Columns";
 import { Header } from "./components/Header";
 import Paragraph from "./components/Paragraph";
@@ -24,12 +24,12 @@ export const App: FC = () => {
   const parametersList: Record<string, Array<Parameter>> = {
     "-": [{ value: "-", display: "-- Выберите параметр --" }],
     Header: [
-      { value: "1", display: "Уровень 1" },
-      { value: "2", display: "Уровень 2" },
-      { value: "3", display: "Уровень 3" },
-      { value: "4", display: "Уровень 4" },
-      { value: "5", display: "Уровень 5" },
-      { value: "6", display: "Уровень 6" },
+      { value: 1, display: "Уровень 1" },
+      { value: 2, display: "Уровень 2" },
+      { value: 3, display: "Уровень 3" },
+      { value: 4, display: "Уровень 4" },
+      { value: 5, display: "Уровень 5" },
+      { value: 6, display: "Уровень 6" },
     ],
     Paragraph: [
       { value: "normal", display: "Обычный" },
@@ -37,8 +37,8 @@ export const App: FC = () => {
       { value: "blockquote", display: "Цитата" },
     ],
     Breaker: [
-      { value: "1", display: "Одна линия" },
-      { value: "2", display: "Две линии" },
+      { value: 1, display: "Одна линия" },
+      { value: 2, display: "Две линии" },
     ],
     Accordion: [
       { value: "collapsed", display: "Свёрнутый" },
@@ -56,6 +56,12 @@ export const App: FC = () => {
     ],
   };
   const parameters = parametersList[componentName];
+  const headerText = "Lorem ipsum dolor sit amet";
+  const breakerText = [
+    "Lorem ipsum dolor sit amet",
+    "consectetur adipiscing elit",
+    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  ].join(", ");
 
   return (
     <div className="app">
@@ -97,12 +103,17 @@ export const App: FC = () => {
       <div className="main">
         {componentName === "Header" && (
           <Header
-            level={componentParameter as HeaderProps["level"]}
-            text="Lorem ipsum dolor sit amet"
+            level={Number(componentParameter) as HeaderProps["level"]}
+            text={headerText}
           />
         )}
         {componentName === "Paragraph" && <Paragraph />}
-        {componentName === "Breaker" && <Breaker />}
+        {componentName === "Breaker" && (
+          <Breaker
+            number={Number(componentParameter) as BreakerProps["number"]}
+            text={breakerText}
+          />
+        )}
         {componentName === "Accordion" && <Accordion />}
         {componentName === "Picture" && <Picture />}
         {componentName === "Columns" && <Columns />}

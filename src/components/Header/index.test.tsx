@@ -3,7 +3,9 @@ import { Header } from ".";
 
 describe("Header", () => {
   it("should find header", () => {
-    render(<Header level="1" text="text" />);
+    const level = 1;
+    const text = String(Math.random());
+    render(<Header level={level} text={text} />);
 
     expect(screen.getByTestId("header")).toBeInTheDocument();
   });

@@ -4,12 +4,12 @@ export type PromptedComponent = {
 };
 
 export type HeaderProps = {
-  level: "1" | "2" | "3" | "4" | "5" | "6";
+  level: 1 | 2 | 3 | 4 | 5 | 6;
   text: string;
 };
 
 export type BreakerProps = {
-  number: "1" | "2";
+  number: 1 | 2;
   text: string;
 };
 
@@ -25,4 +25,4 @@ export type ImageProps = {
 
 export type ColumnProps = { number: number; text: string };
 
-export type Parameter = { value: string; display: string };
+export type Parameter = { value: string | number; display: string };
