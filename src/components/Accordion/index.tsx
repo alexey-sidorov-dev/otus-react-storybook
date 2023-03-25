@@ -2,10 +2,10 @@ import { useState, FC } from "react";
 import { header } from "../../constants";
 import { AccordionProps } from "../../types";
 
-export const Accordion: FC<AccordionProps> = function ({
+export const Accordion: FC<AccordionProps> = ({
   text,
   visible: visibleProp,
-}) {
+}) => {
   const [visible, setVisible] = useState(!!visibleProp);
 
   function clickHandler() {
@@ -23,6 +23,10 @@ export const Accordion: FC<AccordionProps> = function ({
         hidden={visible}
         onClick={clickHandler}
       >
+        {text}
+        <br />
+        {text}
+        <br />
         {text}
       </div>
     </div>

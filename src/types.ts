@@ -13,12 +13,12 @@ export type ParagraphProps = {
   text: string;
 };
 
-export type ImageProps = {
-  float: "left" | "right" | "both";
+export type PictureProps = {
+  float: "left" | "right" | "none";
   text: string;
 };
 
-export type ColumnProps = { number: number; text: string };
+export type ColumnsProps = { number: 2 | 3; text: string };
 
 export type AccordionProps = {
   visible: boolean;

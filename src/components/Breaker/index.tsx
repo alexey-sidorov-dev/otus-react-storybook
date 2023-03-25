@@ -2,12 +2,14 @@ import { FC } from "react";
 import { BreakerProps } from "../../types";
 
 export const Breaker: FC<BreakerProps> = ({ number, text }) => {
-  const br = [...Array(number)].map((value, index) => <hr key={`${index}`} />);
-
+  const hrs = [];
+  for (let i = 0; i < number; i++) {
+    hrs.push(<hr key={i} />);
+  }
   return (
     <>
       <div className="breaker" data-testid="breaker">
-        {br}
+        {hrs}
         {text}
       </div>
     </>

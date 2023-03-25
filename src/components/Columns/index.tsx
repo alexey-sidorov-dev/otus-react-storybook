@@ -1,4 +1,7 @@
-export default () => (
+import { FC } from "react";
+import { ColumnsProps } from "../../types";
+
+export const Columns: FC<ColumnsProps> = () => (
   <div className="columns" data-testid="columns">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto
     delectus consequatur esse reprehenderit cum debitis, quibusdam cumque

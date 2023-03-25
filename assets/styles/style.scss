@@ -14,6 +14,10 @@
   text-align: center;
 }
 
+.info {
+  margin: 0 0 1rem;
+}
+
 .main {
   height: 90%;
 }
@@ -23,12 +27,14 @@
   height: auto;
   width: auto;
   max-width: 500px;
-  max-height: auto;
+  margin: 0 1rem;
 }
 
-.button {
-  margin: 1rem;
+blockquote {
   display: inline-block;
-  padding: 0 10px;
-  width: 8rem;
+  background-color: ghostwhite;
+}
+
+.paragraph.accordion {
+  margin: 0 1rem;
 }

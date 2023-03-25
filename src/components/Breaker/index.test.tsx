@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { Breaker } from ".";
+import { text } from "../../constants";
 
 describe("Breake", () => {
-  it("should find breaker", () => {
-    const number = 2;
-    const text = String(Math.random());
+  it("should render breaker", () => {
+    const number = 1;
     render(<Breaker number={number} text={text} />);
 
     expect(screen.getByTestId("breaker")).toBeInTheDocument();
