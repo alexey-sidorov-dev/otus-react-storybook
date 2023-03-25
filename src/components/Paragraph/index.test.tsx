@@ -1,9 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Paragraph from ".";
+import { Paragraph } from ".";
 
 describe("Paragraph", () => {
   it("should find paragraph", () => {
-    render(<Paragraph />);
+    const style = "italic";
+    const text = String(Math.random());
+    render(<Paragraph style={style} text={text} />);
 
     expect(screen.getByTestId("paragraph")).toBeInTheDocument();
   });

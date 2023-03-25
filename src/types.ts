@@ -1,8 +1,3 @@
-export type PromptedComponent = {
-  componentName: string | null;
-  componentProp: string | null;
-};
-
 export type HeaderProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   text: string;
@@ -24,5 +19,10 @@ export type ImageProps = {
 };
 
 export type ColumnProps = { number: number; text: string };
+
+export type AccordionProps = {
+  visible: boolean;
+  text: string;
+};
 
 export type Parameter = { value: string | number; display: string };

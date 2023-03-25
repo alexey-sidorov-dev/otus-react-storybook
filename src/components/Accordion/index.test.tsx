@@ -1,9 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Accordion from ".";
+import { Accordion } from ".";
 
-describe("Paragraph", () => {
-  it("should find accordion", () => {
-    render(<Accordion />);
+describe("Accordion", () => {
+  it("should render accordion", () => {
+    const collapsed = true;
+    const text = String(Math.random());
+    render(<Accordion visible={collapsed} text={text} />);
 
     expect(screen.getByTestId("accordion")).toBeInTheDocument();
   });

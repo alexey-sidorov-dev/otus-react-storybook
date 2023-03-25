@@ -1,7 +1,30 @@
-export default () => (
-  <div className="accordion" data-testid="accordion">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et quod
-    suscipit possimus ipsum cupiditate, sequi quibusdam a unde est inventore
-    minima recusandae adipisci tempore aut maiores, dolor distinctio voluptates.
-  </div>
-);
+import { useState, FC } from "react";
+import { header } from "../../constants";
+import { AccordionProps } from "../../types";
+
+export const Accordion: FC<AccordionProps> = function ({
+  text,
+  visible: visibleProp,
+}) {
+  const [visible, setVisible] = useState(!!visibleProp);
+
+  function clickHandler() {
+    setVisible(!visible);
+  }
+
+  return (
+    <div className="accordion" onClick={clickHandler}>
+      <div data-accordion-header>
+        {[header, !visible ? "-" : "+"].join(" ")}
+      </div>
+      <div
+        data-accordion-body
+        data-testid="accordion"
+        hidden={visible}
+        onClick={clickHandler}
+      >
+        {text}
+      </div>
+    </div>
+  );
+};

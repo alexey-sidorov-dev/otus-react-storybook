@@ -1,11 +1,18 @@
 import React, { FC, useState } from "react";
-import { BreakerProps, HeaderProps, Parameter } from "./types";
-import Accordion from "./components/Accordion";
+import {
+  AccordionProps,
+  BreakerProps,
+  HeaderProps,
+  ParagraphProps,
+  Parameter,
+} from "./types";
+import { Accordion } from "./components/Accordion";
 import { Breaker } from "./components/Breaker";
 import Columns from "./components/Columns";
 import { Header } from "./components/Header";
-import Paragraph from "./components/Paragraph";
+import { Paragraph } from "./components/Paragraph";
 import Picture from "./components/Picture";
+import { text, header } from "./constants";
 
 export const App: FC = () => {
   const [componentName, setComponentName] = useState("-");
@@ -41,8 +48,8 @@ export const App: FC = () => {
       { value: 2, display: "Две линии" },
     ],
     Accordion: [
-      { value: "collapsed", display: "Свёрнутый" },
-      { value: "expanded", display: "Развёрнутый" },
+      { value: "true", display: "Развёрнутый" },
+      { value: "false", display: "Свёрнутый" },
     ],
     Picture: [
       { value: "left", display: "Обтекание слева" },
@@ -56,12 +63,6 @@ export const App: FC = () => {
     ],
   };
   const parameters = parametersList[componentName];
-  const headerText = "Lorem ipsum dolor sit amet";
-  const breakerText = [
-    "Lorem ipsum dolor sit amet",
-    "consectetur adipiscing elit",
-    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  ].join(", ");
 
   return (
     <div className="app">
@@ -103,18 +104,28 @@ export const App: FC = () => {
       <div className="main">
         {componentName === "Header" && (
           <Header
-            level={Number(componentParameter) as HeaderProps["level"]}
-            text={headerText}
+            level={componentParameter as unknown as HeaderProps["level"]}
+            text={header}
           />
         )}
-        {componentName === "Paragraph" && <Paragraph />}
+        {componentName === "Paragraph" && (
+          <Paragraph
+            style={componentParameter as ParagraphProps["style"]}
+            text={text}
+          />
+        )}
         {componentName === "Breaker" && (
           <Breaker
-            number={Number(componentParameter) as BreakerProps["number"]}
-            text={breakerText}
+            number={componentParameter as unknown as BreakerProps["number"]}
+            text={text}
           />
         )}
-        {componentName === "Accordion" && <Accordion />}
+        {componentName === "Accordion" && (
+          <Accordion
+            visible={componentParameter as unknown as AccordionProps["visible"]}
+            text={text}
+          />
+        )}
         {componentName === "Picture" && <Picture />}
         {componentName === "Columns" && <Columns />}
       </div>
