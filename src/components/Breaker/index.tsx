@@ -10,7 +10,7 @@ export const Breaker: FC<BreakerProps> = ({ number, text }) => {
     <>
       <div className="breaker" data-testid="breaker">
         {hrs}
-        {text}
+        {text + text}
       </div>
     </>
   );

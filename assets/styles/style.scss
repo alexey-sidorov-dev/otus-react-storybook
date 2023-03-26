@@ -27,31 +27,7 @@ body {
 }
 
 .picture {
-  content: url("../images/fine.png");
-  height: auto;
-  width: auto;
-  max-width: 500px;
-  margin: 0 1rem;
-
   &::after {
     clear: both;
   }
-}
-
-.columns {
-  display: flex;
-}
-
-.column {
-  background-color: ghostwhite;
-  margin: 0 1rem;
-}
-
-blockquote {
-  display: inline-block;
-  background-color: ghostwhite;
-}
-
-.paragraph.accordion {
-  margin: 0 1rem;
 }

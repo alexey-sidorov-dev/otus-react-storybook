@@ -8,20 +8,25 @@ export const Columns: FC<ColumnsProps> = ({ number, text }) => {
       <div
         key={i}
         className="column"
-        style={{ float: "left", width: "calc((100%-2rem*number)/number)" }}
+        style={{
+          float: "left",
+          width: "calc((100%-2rem*number)/number)",
+          backgroundColor: "ghostwhite",
+          margin: "0 1rem",
+        }}
       >
-        {text}
-        <br />
-        {text}
-        <br />
-        {text}
+        {text + text + text}
       </div>
     );
   }
 
   return (
     <>
-      <div className="columns" data-testid="columns">
+      <div
+        className="columns"
+        data-testid="columns"
+        style={{ display: "flex" }}
+      >
         {columns}
       </div>
     </>

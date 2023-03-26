@@ -74,11 +74,6 @@ export const App: FC = () => {
             defaultValue={componentName}
             onChange={(e) => {
               setComponentName(e.target.value);
-              console.log(
-                "App",
-                e.target.value,
-                parametersList[e.target.value][0].value
-              );
               setComponentParameter(
                 parametersList[e.target.value][0]
                   .value as SetStateAction<string>

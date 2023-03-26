@@ -13,21 +13,17 @@ export const Accordion: FC<AccordionProps> = ({
   }
 
   return (
-    <div className="accordion" onClick={clickHandler}>
-      <div data-accordion-header>
+    <div
+      className="accordion"
+      data-testid="accordion"
+      style={{ margin: "0 1rem" }}
+      onClick={clickHandler}
+    >
+      <div data-testid="accordion-header">
         {[header, !visible ? "-" : "+"].join(" ")}
       </div>
-      <div
-        data-accordion-body
-        data-testid="accordion"
-        hidden={visible}
-        onClick={clickHandler}
-      >
-        {text}
-        <br />
-        {text}
-        <br />
-        {text}
+      <div data-testid="accordion-body" hidden={visible} onClick={clickHandler}>
+        {text + text + text}
       </div>
     </div>
   );
