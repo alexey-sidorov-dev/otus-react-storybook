@@ -18,7 +18,7 @@ export type PictureProps = {
   text: string;
 };
 
-export type ColumnsProps = { number: 2 | 3; text: string };
+export type ColumnsProps = { number: number; text: string };
 
 export type AccordionProps = {
   visible: boolean;

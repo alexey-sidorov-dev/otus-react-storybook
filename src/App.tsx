@@ -60,6 +60,7 @@ export const App: FC = () => {
     Columns: [
       { value: 2, display: "Две колонки" },
       { value: 3, display: "Три колонки" },
+      { value: 4, display: "Четыре колонки" },
     ],
   };
 
