@@ -1,9 +1,8 @@
 import { FC } from "react";
-import { text } from "../../constants";
 import { PictureProps } from "../../types";
 import picture from "../../../assets/images/fine.png";
 
-export const Picture: FC<PictureProps> = ({ float: floatProp }) => (
+export const Picture: FC<PictureProps> = ({ float: floatProp, text }) => (
   <div data-testid="picture">
     <img
       src={picture}
@@ -17,6 +16,6 @@ export const Picture: FC<PictureProps> = ({ float: floatProp }) => (
         margin: "0 1rem",
       }}
     />
-    <div>{text + text + text}</div>
+    <div>{text}</div>
   </div>
 );

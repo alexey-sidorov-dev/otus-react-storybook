@@ -2,14 +2,11 @@ import { useState, FC } from "react";
 import { header } from "../../constants";
 import { AccordionProps } from "../../types";
 
-export const Accordion: FC<AccordionProps> = ({
-  text,
-  visible: visibleProp,
-}) => {
-  const [visible, setVisible] = useState(!!visibleProp);
+export const Accordion: FC<AccordionProps> = ({ text, visible }) => {
+  const [collapsed, setCollapsed] = useState(!visible);
 
   function clickHandler() {
-    setVisible(!visible);
+    setCollapsed(!collapsed);
   }
 
   return (
@@ -20,10 +17,14 @@ export const Accordion: FC<AccordionProps> = ({
       onClick={clickHandler}
     >
       <div data-testid="accordion-header">
-        {[header, !visible ? "-" : "+"].join(" ")}
+        {[header, collapsed ? "+" : "-"].join(" ")}
       </div>
-      <div data-testid="accordion-body" hidden={visible} onClick={clickHandler}>
-        {text + text + text}
+      <div
+        data-testid="accordion-body"
+        hidden={collapsed}
+        onClick={clickHandler}
+      >
+        {text}
       </div>
     </div>
   );

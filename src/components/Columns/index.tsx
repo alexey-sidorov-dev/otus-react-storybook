@@ -15,7 +15,7 @@ export const Columns: FC<ColumnsProps> = ({ number, text }) => {
           margin: "0 1rem",
         }}
       >
-        {text + text + text}
+        {text}
       </div>
     );
   }

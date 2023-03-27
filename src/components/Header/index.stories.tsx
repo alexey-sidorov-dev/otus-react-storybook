@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Header } from ".";
-import { text } from "../../constants";
+import { header } from "../../constants";
 
 export default {
   title: "Example/Header",
@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   level: 1,
-  text,
+  text: header,
 };

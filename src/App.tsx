@@ -48,10 +48,7 @@ export const App: FC = () => {
       { value: 1, display: "Одна линия" },
       { value: 2, display: "Две линии" },
     ],
-    Accordion: [
-      { value: "true", display: "Развёрнутый" },
-      { value: "false", display: "Свёрнутый" },
-    ],
+    Accordion: [{ value: "true", display: "Развёрнутый" }],
     Picture: [
       { value: "left", display: "Обтекание слева" },
       { value: "right", display: "Обтекание справа" },
@@ -122,7 +119,11 @@ export const App: FC = () => {
         )}
         {componentName === "Accordion" && (
           <Accordion
-            visible={componentParameter as unknown as AccordionProps["visible"]}
+            visible={
+              JSON.parse(
+                componentParameter.toLowerCase()
+              ) as unknown as AccordionProps["visible"]
+            }
             text={text}
           />
         )}
